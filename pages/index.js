@@ -15,6 +15,9 @@ function Home() {
       <Link href="/blog">
         <a>Blog</a>
       </Link>
+      <Link href="/users">
+        <a>User</a>
+      </Link>
       <Link href="/product">
         <a>Product</a>
       </Link>
