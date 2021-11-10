@@ -21,6 +21,9 @@ function Home() {
       <Link href="/product">
         <a>Product</a>
       </Link>
+      <Link href="/posts">
+        <a>Posts</a>
+      </Link>
       <button onClick={handleClick}>Place Order</button>
     </div>
   );
