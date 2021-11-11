@@ -1,28 +1,26 @@
 import Link from "next/link";
-
-function ProductList() {
+function ProductList({ products }) {
   return (
     <>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <h2>
-        <Link href="/product/1">
-          <a>product1</a>
-        </Link>
-      </h2>
-      <h2>
-        <Link href="/product/2">
-          <a>product2</a>
-        </Link>
-      </h2>
-      <h2>
-        {/* replace will take you back to home page when you click reverse in chrom browser */}
-        <Link href="/product/3" replace>
-          <a>product3</a>
-        </Link>
-      </h2>
+      <h1>List of Products</h1>
+      {products.map((product) => {
+        return (
+          <div key={product.id}>
+            <h2>
+              {product.id} {product.price}
+            </h2>
+            <hr />
+          </div>
+        );
+      })}
     </>
   );
 }
 export default ProductList;
+
+export async function getStaticProps() {
+  const response = await fetch("http://localhost:4000/products");
+  const data = await response.json();
+
+  return { props: { products: data } };
+}
