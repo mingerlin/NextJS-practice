@@ -1,10 +1,10 @@
-import "../styles/globals.css";
+import "styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "styled-components";
 import useSWR, { SWRConfig } from "swr";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import "../styles/layout.css";
+import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
+import "styles/layout.css";
 import Head from "next/head";
 
 const theme = {
